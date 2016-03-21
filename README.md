@@ -29,4 +29,4 @@ CREATE TABLE "Logs" (
 )
 ```
 
-This sink uses prepared statements thus makes it "SQL injection safe"
+This sink uses prepared statements thus adds a bit of sql injection safety
