@@ -8,18 +8,18 @@ namespace spdlog
 {
 	namespace sinks
 	{
-		class database_logger_sink :
+		class sqlite_sink :
 			public sink
 		{
 		public:
 
-			explicit database_logger_sink(const std::string& databaseName)
+			explicit sqlite_sink(const std::string& databaseName)
 			{
 				if (sqlite3_open(databaseName.c_str(), &_database))
 					throw spdlog_ex("Error opening database");
 			}
 
-			~database_logger_sink()
+			~sqlite_sink()
 			{
 				sqlite3_close(_database);
 			}
